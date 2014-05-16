@@ -7,13 +7,13 @@
 'use strict';
 
 angular.module('commonality', [])
-  .service('commonalityCalc', function($scope) {
+  .service('commonalityCalc', function($rootScope) {
     var common = {
       sourceText: '',
       results: []
     };
 
-    $scope.$watch('common.sourceText', function(n) {
+    $rootScope.$watch('common.sourceText', function(n) {
         var words = n.value.toLowerCase().split(/\s/).filter(function(a) {return a.length > 2;})
         , wordMap = {}
         , i, l;
