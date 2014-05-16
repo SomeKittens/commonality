@@ -32,6 +32,21 @@ Examples are given assuming textarea with id of `source` and the above table str
 
 ###Angular
 
-    // Not tested yet
+    <div commonality-source></div>
+    <table>
+      <thead>
+        <tr>
+          <td>Word</td>
+          <td>Uses</td>
+        </tr>
+      </thead>
+      <tbody id="commonality" commonality-results></tbody>
+    </table>
+    
+Don't forget to require commonality in your JavaScript:
+
+    angular.module('MyApp', [
+      'commonality'  
+    ])
 
 Minified files are generated with UglifyJS2
