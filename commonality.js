@@ -10,7 +10,9 @@ var commonality = function(textId, resultsId) {
     , results = document.getElementById(resultsId);
 
   text.addEventListener('change', function() {
-    var words = text.value.toLowerCase().split(/\s/).filter(function(a) {return a.length > 2;})
+    var words = text.value.toLowerCase()
+      .split(/\s/).replace(/\]\(/, ' ').replace(/[*_\[\)/, '')
+      .filter(function(a) {return a.length > 2;})
       , wordMap = {}
       , i, l;
 
